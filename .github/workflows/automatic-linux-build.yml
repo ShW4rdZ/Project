@@ -1,0 +1,24 @@
+name: Building game for linux !
+run-name: ${{ github.actor }} launched building
+on: [push]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Rename index.py to __main__.py
+        run: mv index.py __main__.py
+      - name: Create zip from files
+        run: zip -r game.zip *
+      - name: Add env indications and remove .zip extension
+        run: echo '#!/usr/bin/env python3' | cat - game.zip > game
+      - name: Remove zip file 
+        run: rm game.zip
+      - name: Add executable tag to game
+        run: chmod a+x app
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: game
+          path: ./game
