@@ -13,11 +13,11 @@ class Inventory:
         if not item_list is None and type(item_list) == list:
             self.contents += item_list
 
-    def add_item(self, item : Item, count = 1) -> None:
+    def add_item(self, item : Item, count: int = 1) -> None:
         """Adds an item to the inventory, adds it to the item count if item is stackable"""
         assert type(item) == Item, "item must be an instance of the Item class !"
-        if item in self.contents and item.stackable:
-            item.count += 1
+        if item in self.contents and item.stackable: # Will need to change the way wa detect items in inventory
+            self.contents[self.contents.index(item)].count += count
         else:
             self.contents.append(item)
 
