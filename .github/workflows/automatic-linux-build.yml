@@ -16,7 +16,7 @@ jobs:
       - name: Remove zip file 
         run: rm game.zip
       - name: Add executable tag to game
-        run: chmod a+x app
+        run: chmod a+x game
 
       - uses: actions/upload-artifact@v3
         with:
