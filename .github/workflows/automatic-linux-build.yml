@@ -22,3 +22,4 @@ jobs:
         with:
           name: game
           path: ./game
+          retention-days: 5
