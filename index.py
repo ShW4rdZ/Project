@@ -1,4 +1,4 @@
-"""Début du projet"""
+from src.inventory.inventory import Inventory
 
 class Game:
     def __init__(self) -> None:
@@ -6,5 +6,6 @@ class Game:
     def start(self) -> None:
         print("Starting game !")
 
-game = Game()
-game.start()
+if __name__ == "__main__":
+    game = Game()
+    game.start()
