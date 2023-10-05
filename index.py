@@ -1,6 +1,6 @@
 from src.inventory import Inventory, Item
 from src.player import Player
-
+from src.database import save, load
 
 class Game:
     def __init__(self) -> None:
@@ -24,3 +24,7 @@ if __name__ == "__main__":
     
     sword.destroy()
     print(game.player.inventory)
+
+    #save(game, "game")
+    #g_load = load("game")
+    #print(g_load)
