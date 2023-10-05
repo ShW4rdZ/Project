@@ -1,5 +1,5 @@
 import pickle
-from inventory.item import Item
+from ..inventory import Item
 
 def save_instance(instance):
     with open("save.pickle", "wb") as file_:
