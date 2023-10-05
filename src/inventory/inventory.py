@@ -8,18 +8,19 @@ class Inventory:
     Attributes:
         contents: A list of Item classes storing items contained in the inventory
     """
-    def __init__(self, item_list: list[Item] = None) -> None:
-        self.contents = []
-        if not item_list is None and type(item_list) == list:
-            self.contents += item_list
+    def __init__(self) -> None:
+        self._items = []
 
-    def add_item(self, item : Item, count: int = 1) -> None:
-        """Adds an item to the inventory, adds it to the item count if item is stackable"""
-        assert type(item) == Item, "item must be an instance of the Item class !"
-        if item in self.contents and item.stackable: # Will need to change the way wa detect items in inventory
-            self.contents[self.contents.index(item)].count += count
-        else:
-            self.contents.append(item)
+    def __repr__(self) -> str:
+        return f"<Inventory({self._items})>"
+
+    def add(self, *items) -> None:
+        for item in items:
+            item.destroyed.connect(self.on_destroyed)
+            self._items.append(item)
+
+    def on_destroyed(self, item) -> None:
+        self._items.remove(item)
 
 
 

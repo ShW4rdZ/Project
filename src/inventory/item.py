@@ -1,3 +1,4 @@
+from ..signals import Signal
 
 class Item:
     """Base item class.
@@ -10,5 +11,13 @@ class Item:
     """
     count = 1
     stackable = True
-    def __init__(self) -> None:
-        pass
+    durability = None
+    def __init__(self, name) -> None:
+        self.destroyed = Signal()
+        self.name = name
+
+    def __repr__(self):
+        return f"<Item({self.name})>"
+
+    def destroy(self):
+        self.destroyed.fire(self)
