@@ -8,8 +8,10 @@ class Signal:
          self._handlers = []
 
     def connect(self, handler):
-         self._handlers.append(handler)
+        """Links a handler to the signal"""
+        self._handlers.append(handler)
 
     def fire(self, *args):
-         for handler in self._handlers:
-             handler(*args)
+        """Triggers the signal's associated handlers"""
+        for handler in self._handlers:
+            handler(*args)

@@ -14,12 +14,14 @@ class Inventory:
     def __repr__(self) -> str:
         return f"<Inventory({self._items})>"
 
-    def add(self, *items) -> None:
+    def add(self, *items: Item) -> None:
+        """Adds any number of items to the inventory"""
         for item in items:
-            item.destroyed.connect(self.on_destroyed)
+            item.destroyed.connect(self._on_destroyed)
             self._items.append(item)
 
-    def on_destroyed(self, item) -> None:
+    def _on_destroyed(self, item) -> None:
+        """Removes inputted item from the inventory"""
         self._items.remove(item)
 
 
