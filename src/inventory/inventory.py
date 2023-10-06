@@ -4,9 +4,6 @@ class Inventory:
     """Base inventory class.
 
     Meant to be used as an inventory to store data on entities
-
-    Attributes:
-        contents: A list of Item classes storing items contained in the inventory
     """
     def __init__(self) -> None:
         self._items = []
