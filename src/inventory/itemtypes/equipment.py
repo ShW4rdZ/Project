@@ -1,7 +1,14 @@
 from .. import Item
 
 class Equipment(Item):
-    """Equipment class that derives from Item, comes out of the box with durability and other functions to ease the process of creating equipment items"""
+    """Base equipment class
+    
+    Derives from Item, comes out of the box with durability and other functions to ease the process of creating equipment items
+
+    Attributes:
+        max_durability: int, base durability of the equipment piece
+        durability: int, current durability of the equipment piece
+    """
     def __init__(self, max_durability: int = 1, **kwargs) -> None:
         self.max_durability = max_durability
         self.durability = self.max_durability
