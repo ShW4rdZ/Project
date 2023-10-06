@@ -6,18 +6,15 @@ class Item:
     Meant to be used as a way to store data concerning items
 
     Attributes:
-        count: Integer, quantity of item stored, mostly used for inventory management
-        stackable: Boolean, defines whether or not items of the same typed can be grouped in inventory
+        name: str, display name of the item
     """
-    count = 1
-    stackable = True
-    durability = None
-    def __init__(self, name) -> None:
+    def __init__(self, name: str = "") -> None:
         self.destroyed = Signal()
         self.name = name
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<Item({self.name})>"
 
-    def destroy(self):
+    def destroy(self) -> None:
         self.destroyed.fire(self)
+

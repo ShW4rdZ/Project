@@ -24,5 +24,8 @@ class Inventory:
         """Removes inputted item from the inventory"""
         self._items.remove(item)
 
+    def clear(self) -> None:
+        """Clears the inventory"""
+        self._items = []
 
 
