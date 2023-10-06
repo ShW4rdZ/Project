@@ -8,7 +8,7 @@ class Item:
     Attributes:
         name: str, display name of the item
     """
-    def __init__(self, name: str = "") -> None:
+    def __init__(self, name: str = "Dummy") -> None:
         self.destroyed = Signal()
         self.name = name
 

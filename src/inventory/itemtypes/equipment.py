@@ -1,12 +1,15 @@
-from . import Item
+from .. import Item
 
 class Equipment(Item):
     """Equipment class that derives from Item, comes out of the box with durability and other functions to ease the process of creating equipment items"""
-    def __init__(self, max_durability=1: int, **kwargs) -> None:
+    def __init__(self, max_durability: int = 1, **kwargs) -> None:
         self.max_durability = max_durability
         self.durability = self.max_durability
 
-        super().__init__(kwargs)
+        super().__init__(**kwargs)
+
+    def __repr__(self) -> str:
+        return f"<Equipment({self.name} - {self.durability}/{self.max_durability})>"
 
     def damage(self, damage: int = 1) -> int:
         """Reduces durability of equipment. If new durability is below 0, destroy the item. Returns the new durability"""
