@@ -22,12 +22,12 @@ if __name__ == "__main__":
     game.player.inventory.add(sword, shield)
     print(game.player.inventory)
     
-    #sword.destroy()
+    sword.destroy()
     print(game.player.inventory)
 
     #save(game, "game")
-    g_load = load("game")
-    print(g_load)
-    print(g_load.player.inventory)
-    g_load.player.inventory.clear()
-    print(g_load.player.inventory)
+    #g_load = load("game")
+    #print(g_load)
+    #print(g_load.player.inventory)
+    #g_load.player.inventory.clear()
+    #print(g_load.player.inventory)
