@@ -16,5 +16,9 @@ class Item:
         return f"<Item({self.name})>"
 
     def destroy(self) -> None:
+        """Removes this item from its attached inventory if it added to one
+        .. Note::
+            The item instance itself is not destroyed, it's only removed from the inventories it was in
+        """
         self.destroyed.fire(self)
 
