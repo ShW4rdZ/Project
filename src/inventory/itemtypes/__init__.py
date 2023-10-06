@@ -1,3 +1,5 @@
+"""Item subclasses"""
+
 # Consumables and subtypes
 from .consumable import Consumable
 
