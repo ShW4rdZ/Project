@@ -1,4 +1,7 @@
-"""Item subclasses"""
+"""Item subclasses
+
+Use to avoid relying on base item class and ease the creation process for advanced items
+"""
 
 # Consumables and subtypes
 from .consumable import Consumable
