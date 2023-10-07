@@ -7,6 +7,7 @@ class Item:
 
     Attributes:
         name: str, display name of the item
+        destroyed: Signal, triggered on item destruction
     """
     def __init__(self, name: str = "Dummy") -> None:
         self.destroyed = Signal()
