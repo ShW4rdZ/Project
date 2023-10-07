@@ -14,10 +14,10 @@ class Inventory:
     def add(self, *items: Item) -> None:
         """Adds any number of items to the inventory"""
         for item in items:
-            item.destroyed.connect(self._on_destroyed)
+            item.destroyed.connect(self._on_item_destroyed)
             self._items.append(item)
 
-    def _on_destroyed(self, item) -> None:
+    def _on_item_destroyed(self, item) -> None:
         """Removes inputted item from the inventory"""
         self._items.remove(item)
 
