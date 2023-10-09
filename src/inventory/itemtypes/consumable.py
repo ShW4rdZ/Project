@@ -7,8 +7,8 @@ class Consumable(Item):
 
     Attributes:
         effects: list of effects triggered on consumable use
-        duration: duration of the effects (in seconds). 0 means instant effects. Defaults to 60
-        uses_left: how many uses are left on the consumable. Defaults to 1"""
+        duration: int, duration of the effects (in seconds). 0 means instant effects. Defaults to 60
+        uses_left: int, how many uses are left on the consumable. Defaults to 1"""
     def __init__(self, effects: list = [], duration: float = 60, uses: int = 1, **kwargs) -> None:
         self.effects = effects
         self.duration = duration #In seconds
