@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
     potion = Consumable(name = "Dungeon potion", effects = ["Regeneration", "Strength"], duration = 2)
     coins = StackableItem(name = "Coins", count = 70531)
-    coins.add_count(10000)
-    coins.remove_count(11111)
+    coins.count += 10000
+    coins.count -= 11111
 
     print(sword, shield, potion, coins, "\n")
     
@@ -33,6 +33,8 @@ if __name__ == "__main__":
     
     sword.destroy()
     print(game.player.inventory, "\n")
+
+    #coins.count = -42
 
     #save(game, "game")
     #g_load = load("game")

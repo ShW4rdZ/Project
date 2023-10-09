@@ -10,20 +10,17 @@ class StackableItem(Item):
 
         super().__init__(**kwargs)
 
-    def add_count(self, count: int) -> int:
-        """Adds count to the current quantity of the item. Returns the new quantity"""
-        self._count += count
+    @property
+    def count(self) -> int:
+        """Get the quantity of the item"""
         return self._count
 
-    def remove_count(self, count: int) -> int:
-        """Removes count items from the current quantity of the item. Returns the new quantity"""
-        self._count -= count
-        if self._count < 0:
-            self._count = 0
-        return self._count
-
-    def get_count(self) -> int:
-        return self._count
+    @count.setter
+    def count(self, count: int) -> None:
+        """Set the quantity of the item"""
+        if count < 0:
+            raise ValueError("Item quantity cannot be negative !")
+        self._count = count
 
     def __repr__(self) -> str:
         return f"<StackableItem({self.name} * {self._count})>"
