@@ -1,6 +1,6 @@
 from src.inventory import Inventory, Item, Equipment, Consumable, Weapon
 from src.player import Player
-from src.database import save, load
+#from src.database import save, load 
 
 class Game:
     def __init__(self) -> None:
