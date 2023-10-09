@@ -12,7 +12,7 @@ class StackableItem(Item):
 
     @property
     def count(self) -> int:
-        """Get the quantity of the item"""
+        """Property: quantity of the item"""
         return self._count
 
     @count.setter
