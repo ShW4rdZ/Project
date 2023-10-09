@@ -1,4 +1,4 @@
-from src.inventory import Inventory, Item, Equipment, Consumable, Weapon
+from src.inventory import Inventory, Item, Equipment, Consumable, Weapon, StackableItem
 from src.player import Player
 #from src.database import save, load 
 
@@ -22,13 +22,17 @@ if __name__ == "__main__":
     sword.damage(3)
 
     potion = Consumable(name = "Dungeon potion", effects = ["Regeneration", "Strength"], duration = 2)
-    print(sword, shield, potion)
+    coins = StackableItem(name = "Coins", count = 70531)
+    coins.add_count(10000)
+    coins.remove_count(11111)
+
+    print(sword, shield, potion, coins, "\n")
     
-    game.player.inventory.add(sword, shield, potion)
-    print(game.player.inventory)
+    game.player.inventory.add(sword, shield, potion, coins)
+    print(game.player.inventory, "\n")
     
     sword.destroy()
-    print(game.player.inventory)
+    print(game.player.inventory, "\n")
 
     #save(game, "game")
     #g_load = load("game")
