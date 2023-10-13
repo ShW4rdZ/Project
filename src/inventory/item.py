@@ -22,4 +22,3 @@ class Item:
             The item instance itself is not destroyed, it's only removed from the inventories it was in
         """
         self.destroyed.fire(self)
-

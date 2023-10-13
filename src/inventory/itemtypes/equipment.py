@@ -2,7 +2,7 @@ from .. import Item
 
 class Equipment(Item):
     """Base equipment class
-    
+
     Derives from Item, comes out of the box with durability and other functions to ease the process of creating equipment items
 
     Attributes:
@@ -34,4 +34,3 @@ class Equipment(Item):
             if self.durability > self.max_durability:
                 self.durability = self.max_durability
         return self.durability
-

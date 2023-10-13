@@ -1,13 +1,13 @@
 from src.inventory import Inventory, Item, Equipment, Consumable, Weapon, StackableItem
 from src.player import Player
-#from src.database import save, load 
+#from src.database import save, load
 
 class Game:
     def __init__(self) -> None:
         print("######\nRPyG\n######")
     def start(self) -> None:
         print("Loading player")
-        self.player = Player() 
+        self.player = Player()
 
         print("Starting game !")
 
@@ -27,10 +27,10 @@ if __name__ == "__main__":
     coins.count -= 11111
 
     print(sword, shield, potion, coins, "\n")
-    
+
     game.player.inventory.add(sword, shield, potion, coins)
     print(game.player.inventory, "\n")
-    
+
     sword.destroy()
     print(game.player.inventory, "\n")
 

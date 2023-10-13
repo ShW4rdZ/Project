@@ -2,7 +2,7 @@ from .. import Item
 
 class StackableItem(Item):
     """Stackable item class
-    
+
     Derives from Item, comes out of the box with count and methods to manage stackable items
     """
     def __init__(self, count: int = 1, **kwargs) -> None:

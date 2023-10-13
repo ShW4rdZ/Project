@@ -2,7 +2,7 @@ from . import Equipment
 
 class Weapon(Equipment):
     """Weapon class:
-    
+
     Derives from Equipment, helps with creating weapons
 
     Attributes:

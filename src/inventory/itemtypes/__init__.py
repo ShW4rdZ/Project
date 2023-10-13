@@ -12,4 +12,3 @@ from .weapon import Weapon
 
 # Stackable items
 from .stackable_item import StackableItem
-

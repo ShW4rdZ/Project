@@ -25,4 +25,3 @@ class Inventory:
         """Clears the inventory"""
         self._items = []
 
-

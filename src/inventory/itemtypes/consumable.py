@@ -2,7 +2,7 @@ from .. import Item
 
 class Consumable(Item):
     """Consumable class
-    
+
     Derives from Item, comes out of the box with effects and misc attributes for consumable creation
 
     Attributes:
@@ -18,4 +18,3 @@ class Consumable(Item):
 
     def __repr__(self) -> str:
         return f"<Consumable({self.name} - {self.effects} for {self.duration}s)>"
-
