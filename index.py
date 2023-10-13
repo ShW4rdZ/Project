@@ -34,6 +34,9 @@ if __name__ == "__main__":
     sword.destroy()
     print(game.player.inventory, "\n")
 
+    for item in game.player.inventory:
+        print(itemk)
+
     #coins.count = -42
 
     #save(game, "game")

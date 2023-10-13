@@ -21,7 +21,15 @@ class Inventory:
         """Removes inputted item from the inventory"""
         self._items.remove(item)
 
+    def __iter__(self):
+        self.iter_data = self._items[:]
+        return self
+
+    def __next__(self):
+        if not self.iter_data:
+            raise StopIteration
+        return self.iter_data.pop()
+
     def clear(self) -> None:
         """Clears the inventory"""
         self._items = []
-
