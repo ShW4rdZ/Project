@@ -1,3 +1,4 @@
+"""Stackable item class"""
 from .. import Item
 
 class StackableItem(Item):

@@ -1,3 +1,4 @@
+"""Consumable class"""
 from .. import Item
 
 class Consumable(Item):

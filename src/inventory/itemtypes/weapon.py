@@ -1,3 +1,4 @@
+"""Weapon class"""
 from . import Equipment
 
 class Weapon(Equipment):

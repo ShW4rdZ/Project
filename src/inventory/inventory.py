@@ -1,3 +1,4 @@
+"""Inventory class"""
 from .item import Item
 
 class Inventory:

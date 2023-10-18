@@ -1,3 +1,4 @@
+"""Item class"""
 from ..signals import Signal
 
 class Item:
