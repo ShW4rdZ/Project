@@ -17,6 +17,10 @@ class Inventory:
             item.destroyed.connect(self._on_item_destroyed)
             self._items.append(item)
 
+    def clear(self) -> None:
+        """Clears the inventory"""
+        self._items = []
+
     def _on_item_destroyed(self, item) -> None:
         """Removes inputted item from the inventory"""
         self._items.remove(item)
@@ -29,7 +33,3 @@ class Inventory:
         if not self.iter_data:
             raise StopIteration
         return self.iter_data.pop()
-
-    def clear(self) -> None:
-        """Clears the inventory"""
-        self._items = []

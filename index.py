@@ -35,7 +35,7 @@ if __name__ == "__main__":
     print(game.player.inventory, "\n")
 
     for item in game.player.inventory:
-        print(itemk)
+        print(item)
 
     #coins.count = -42
 
